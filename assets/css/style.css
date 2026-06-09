@@ -61,7 +61,7 @@ img.img-responsive {
 
 
 /* ==========================================================================
-   2. NAVBAR (MODERNA: LOGO E TEXTO EM LINHA)
+   2. NAVBAR & MENU SANDUÍCHE (CONFIGURAÇÃO HORIZONTAL)
    ========================================================================== */
 .navbar {
   position: sticky;
@@ -84,11 +84,10 @@ img.img-responsive {
   align-items: center;
 }
 
-/* Configuração horizontal moderna */
 .logo a {
   display: inline-flex;    
   align-items: center;     
-  gap: 12px;               /* Espaçamento elegante entre o ícone e o texto */
+  gap: 12px;               
   text-decoration: none;
   color: var(--primary-blue);
   font-weight: 800;
@@ -96,10 +95,9 @@ img.img-responsive {
   transition: var(--transition);
 }
 
-/* Tamanho quadrado perfeito para a logo na navbar horizontal */
 .nav-logo-img {
-  width: 130px !important;   
-  height: 130px !important;
+  width: 130px !important;   /* Mantido exatamente o seu tamanho definido */
+  height: 130px !important;  /* Mantido exatamente o seu tamanho definido */
   display: block;
   object-fit: contain;     
   border-radius: 6px;
@@ -111,7 +109,14 @@ img.img-responsive {
   line-height: 1;
 }
 
-.navbar ul {
+/* Agrupador do lado direito da Navbar */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar ul.nav-menu {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -139,6 +144,27 @@ img.img-responsive {
   cursor: pointer;
   font-weight: bold;
   font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+/* Estrutura do Botão Hamburguer (Invisível no desktop) */
+.btn-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.btn-hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
   transition: var(--transition);
 }
 
@@ -422,11 +448,10 @@ img.img-responsive {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap; /* Permite quebrar linha caso a tela encolha */
+  flex-wrap: wrap; 
   margin-bottom: 5px;
 }
 
-/* 🎯 CORRIGIDO: Força os dois cards a dividirem o espaço igualmente (lado a lado) */
 .card.person {
   padding: 20px;
   background: var(--bg);
@@ -435,11 +460,9 @@ img.img-responsive {
   text-align: left;
   cursor: pointer; 
   transition: var(--transition);
-  
-  /* Propriedades mágicas que restabelecem o alinhamento simétrico: */
-  flex: 1 1 450px;    /* 👈 Faz os cards crescerem juntos e terem o mesmo tamanho */
-  max-width: 520px;   /* 👈 Limita a largura máxima para não esticarem demais em monitores gigantes */
-  display: flex;      /* 👈 Garante que a estrutura interna ocupe toda a altura */
+  flex: 1 1 450px;    
+  max-width: 520px;   
+  display: flex;      
 }
 
 .card.person:hover {
@@ -462,7 +485,7 @@ img.img-responsive {
 .card.person .card-link img {
   width: 100px;
   height: 100px;
-  min-width: 100px; /* Impede que a foto amasse caso o texto da bio seja longo */
+  min-width: 100px; 
   border-radius: 50%;
   border: 3px solid var(--primary-blue);
   object-fit: cover;
@@ -801,40 +824,84 @@ footer a {
   .layout-split.inverse .split-grid .split-image { order: 2; }
   .hero h1 { font-size: 2.8rem; }
   .submission-card-box.border-accent { margin-top: 0; } 
+  #datas .split-image { margin-top: 0; }
 }
 
 @media (max-width: 768px) {
-  .navbar ul { display: none; }
   .cards-grid, .comite-grid, .timeline-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2.2rem; }
   
-  /* 🎯 REGRA ADICIONADA: Oculta apenas o texto longo da logo, mantendo o ícone no mobile */
-  .logo .nav-logo-text {
-    display: none !important;
+  /* 🎯 ATIVAÇÃO DO BOTÃO HAMBÚRGUER */
+  .btn-hamburger {
+    display: flex;
+  }
+
+  /* 🎯 NOME VISÍVEL COM FONTE ADAPTATIVA */
+  .logo a {
+    font-size: 0.95rem; 
+    gap: 8px;           
   }
   
+  .logo .nav-logo-text {
+    display: inline-block !important; 
+    white-space: normal;              
+    max-width: 140px;                 
+    text-align: left;
+  }
+
+  /* 🎯 TRANSFORMA SUA LISTA ORIGINAL NA CORTINA LATERAL FLUTUANTE */
+  .navbar ul.nav-menu { 
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--bg);
+    border-left: 1px solid var(--card-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 30px;
+    gap: 25px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1050;
+    display: flex !important; /* Sobrescreve eventuais conflitos */
+  }
+  
+  .navbar ul.nav-menu.active {
+    right: 0;
+  }
+
+  .navbar ul.nav-menu a {
+    font-size: 1.1rem;
+    width: 100%;
+    display: block;
+  }
+
+  /* 🎯 COMPORTAMENTO DE RESPONSIVIDADE DOS BOTÕES INFERIORES */
   .hero-actions, .submission-actions {
     flex-direction: column;
     width: 100%;
     gap: 10px;
   }
+  
   .submission-actions a,
   .submission-actions .btn-secondary-cbie,
   .submission-actions .btn-primary {
     width: 100% !important;
     display: inline-flex;
+    justify-content: center;
   }
-}
 
-@media (max-width: 992px) {
-  .split-grid, .submission-mega-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  /* Animação mecânica das linhas do hambúrguer (Virando X) */
+  .btn-hamburger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
   }
-  
-  /* 🎯 Adicione esta linha aqui dentro para resetar no mobile: */
-  #datas .split-image {
-    margin-top: 0; 
+  .btn-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .btn-hamburger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
   }
 }
 
@@ -897,4 +964,8 @@ body.high-contrast .link-equipe:hover {
 
 body.high-contrast .card.person:hover {
   border-color: var(--primary-blue); 
+}
+
+body.high-contrast .btn-hamburger span {
+  background-color: var(--text); 
 }

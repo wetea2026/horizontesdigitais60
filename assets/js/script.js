@@ -40,3 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    const button = document.getElementById('hamburgerBtn');
+    
+    menu.classList.toggle('active');
+    button.classList.toggle('active');
+}
+
+function closeMenu() {
+    const menu = document.getElementById('navMenu');
+    const button = document.getElementById('hamburgerBtn');
+    
+    if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        button.classList.remove('active');
+    }
+}

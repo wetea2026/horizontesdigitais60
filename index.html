@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontes Digitais 60+ | Workshop de Educação, Tecnologia e Envelhecimento Ativo</title>
+    <title>Horizontes Digitais 60+</title>
     <meta name="description" content="Workshop de Educação, Tecnologia e Envelhecimento Ativo - Evento Satélite CBIE 2026">
     <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,17 +17,27 @@
             <div class="logo">
                 <a href="#">
                     <img src="assets/images/logo.png" alt="Logo Horizontes Digitais 60+" class="nav-logo-img">
-                    <span class="text-contrast-white">Horizontes Digitais 60+</span>
+                    <span class="text-contrast-white nav-logo-text">Horizontes Digitais 60+</span>
                 </a>
             </div>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#datas">Datas</a></li>
-                <li><a href="#programacao">Programação</a></li>
-                <li><a href="#submissoes">Submissões</a></li>
-                <li><a href="#organizacao">Organização</a></li>
-                <li><button id="contrast-toggle" class="btn-contrast" aria-label="Alternar alto contraste">🌓 Contraste</button></li>
-            </ul>
+            
+            <div class="nav-actions">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                    <li><a href="#datas" onclick="closeMenu()">Datas</a></li>
+                    <li><a href="#programacao" onclick="closeMenu()">Programação</a></li>
+                    <li><a href="#submissoes" onclick="closeMenu()">Submissões</a></li>
+                    <li><a href="#organizacao" onclick="closeMenu()">Organização</a></li>
+                </ul>
+
+                <button id="contrast-toggle" class="btn-contrast" aria-label="Alternar alto contraste">🌓 Contraste</button>
+
+                <button class="btn-hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Abrir Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -212,9 +222,7 @@
                         <a href="https://www.sbc.org.br/wp-content/uploads/2024/07/Autoriza-o-de-Publica-o-CC-BY-4.0-WICS-2020.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary-cbie">
                             ✍️ Termo de Autorização
                         </a>
-                        <a href="#" class="btn-primary">
-                            🚀 Submeter Trabalho via JEMS3
-                        </a>
+                        <a href="#" class="btn-primary">Submeter Trabalho via JEMS3</a>
                     </div>
                 </div>
 

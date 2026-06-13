@@ -969,3 +969,90 @@ body.high-contrast .card.person:hover {
 body.high-contrast .btn-hamburger span {
   background-color: var(--text); 
 }
+
+/* ==========================================================================
+   11. CONTATOS
+   ========================================================================== */
+/* Container dos botões estilo Even3 */
+.org-actions-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* Base dos botões arredondados */
+.btn-org-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px; /* Garante o visual arredondado estilo Even3 */
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+
+/* Botão de Contato (Usa o azul padrão do seu evento) */
+.btn-org-contact {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  border: 1px solid var(--primary-blue);
+}
+
+.btn-org-contact:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Botão do Instagram (Usa o tom laranja para harmonizar com a paleta do evento) */
+.btn-org-instagram {
+  background-color: transparent;
+  color: var(--accent-orange);
+  border: 2px solid var(--accent-orange);
+}
+
+.btn-org-instagram:hover {
+  background-color: var(--accent-orange);
+  color: var(--bg);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Suporte e Ajuste para a Seção 10 (Alto Contraste)
+   ========================================================================== */
+body.high-contrast .btn-org-action {
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+body.high-contrast .btn-org-action:hover {
+  background-color: var(--primary-blue) !important; /* Vira amarelo no contraste */
+  color: #000000 !important;
+  border-color: var(--primary-blue) !important;
+}
+
+@media (max-width: 768px) {
+  /* ... suas outras regras do mobile ... */
+
+  .hero-actions, .submission-actions, .org-actions-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .submission-actions a,
+  .submission-actions .btn-secondary-cbie,
+  .submission-actions .btn-primary,
+  .btn-org-action {
+    width: 100% !important;
+    display: inline-flex;
+    justify-content: center;
+  }
+}

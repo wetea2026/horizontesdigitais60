@@ -6,7 +6,7 @@ Este é o repositório oficial do website do **Horizontes Digitais 60+**. O proj
 
 ## 🔗 Demonstração Disponível (Live Demo)
 O site está publicado e pode ser acessado diretamente através do GitHub Pages:
-👉 **[INSIRA_AQUI_O_LINK_DO_SEU_GITHUB_PAGES]** *(Ex: https://seu-usuario.github.io/nome-do-repositorio)*
+https://wetea2026.github.io/horizontesdigitais60/
 
 ---
 

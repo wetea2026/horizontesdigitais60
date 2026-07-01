@@ -11,6 +11,17 @@
 </head>
 <body>
 
+    <div id="popupProrrogacao" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="popupTitle">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closePopup()" aria-label="Fechar aviso">&times;</button>
+            
+            <div class="modal-content">
+                <h2 id="popupTitle" class="sr-only">Aviso de Prorrogação das Submissões</h2>
+                <img src="assets/images/sections/PRORROGACAO.png" alt="Cartaz informativo sobre a prorrogação dos prazos de submissão do evento" class="modal-img">
+            </div>
+        </div>
+    </div>
+
     <div id="progress-bar"></div>
 
     <nav class="navbar">
@@ -86,7 +97,7 @@
                     <div class="cards-grid">
                         <div class="card">
                             <h3>Submissão de Artigos</h3>
-                            <p class="date">01/07/2026 <span class="badge-limite">Data limite</span></p>
+                            <p class="date">10/07/2026 <span class="badge-limite">Data limite</span></p>
                         </div>
                         <div class="card">
                             <h3>Notificação de Resultado</h3>

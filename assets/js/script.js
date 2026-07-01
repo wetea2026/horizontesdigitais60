@@ -58,3 +58,29 @@ function closeMenu() {
         button.classList.remove('active');
     }
 }
+
+// Executa automaticamente quando a página termina de carregar completamente
+window.addEventListener('DOMContentLoaded', () => {
+    // Abre o pop-up com um leve delay de 800ms para uma experiência mais fluida
+    setTimeout(openPopup, 800);
+    
+    // Fecha o modal caso o usuário clique no fundo escuro externo
+    const modal = document.getElementById('popupProrrogacao');
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closePopup();
+        }
+    });
+});
+
+function openPopup() {
+    const modal = document.getElementById('popupProrrogacao');
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function closePopup() {
+    const modal = document.getElementById('popupProrrogacao');
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+}

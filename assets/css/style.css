@@ -1173,3 +1173,149 @@ body.high-contrast .modal-close-btn {
   color: #ffffff;
   border: 2px solid #ffffff;
 }
+
+/* ==========================================================================
+   ESTILIZAÇÃO DA TABELA DETALHADA DE APRESENTAÇÕES DE TRABALHOS
+   ========================================================================== */
+.schedule-details-block {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px dashed var(--card-border);
+}
+
+.schedule-table-title {
+  color: var(--primary-blue);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.schedule-table-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 35px;
+}
+
+/* Agrupador da Sessão Temática */
+.session-group {
+  margin-bottom: 30px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.session-header {
+  background-color: var(--bg-alt);
+  color: var(--primary-blue);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 20px;
+  border-bottom: 2px solid var(--accent-orange);
+}
+
+/* Envolvente com rolagem horizontal para o celular */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tabela Estilizada */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.schedule-table th {
+  background-color: rgba(36, 123, 160, 0.05);
+  color: var(--text);
+  font-weight: 700;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--card-border);
+  white-space: nowrap;
+}
+
+.schedule-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-muted);
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.schedule-table tr:hover td {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+/* Destaque para colunas específicas */
+.schedule-table .time-col {
+  font-weight: 800;
+  color: var(--primary-blue);
+  white-space: nowrap;
+  width: 110px;
+}
+
+.schedule-table .title-col {
+  font-weight: 600;
+  color: var(--text);
+  min-width: 250px;
+}
+
+/* ==========================================================================
+   Suporte de Alto Contraste (A11Y) para a Tabela
+   ========================================================================== */
+body.high-contrast .session-group {
+  border-color: #ffffff;
+}
+
+body.high-contrast .session-header {
+  background-color: #1a1a1a;
+  color: var(--primary-blue);
+  border-bottom-color: var(--accent-orange);
+}
+
+body.high-contrast .schedule-table th {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.high-contrast .schedule-table td {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+body.high-contrast .schedule-table .title-col {
+  color: #ffffff;
+}
+
+body.high-contrast .schedule-table .time-col {
+  color: var(--primary-blue);
+}
+
+/* ==========================================================================
+   ESPAÇAMENTO ENTRE O CRONOGRAMA E A TABELA DETALHADA
+   ========================================================================== */
+.schedule-details-container {
+  margin-top: 60px; 
+  padding-top: 40px; 
+  border-top: 1px dashed var(--card-border); 
+}
+
+/* Espaçamento interno entre o título da grade e a frase explicativa */
+.schedule-subtitle {
+  color: var(--primary-blue);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.schedule-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 30px
+}
